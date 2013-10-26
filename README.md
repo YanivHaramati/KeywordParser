@@ -16,6 +16,7 @@ ine/NN, Jacuzzi/NN, hot/JJ, tub/NN, ./.]
 Sentence: [This/DT, Upper/NNP, Lonsdale/NNP, home/NN, is/VBZ, centrally/RB, located/VBN, close/RB, to/TO, three/CD, schools/NNS, and/CC, offers/VBZ, much/JJ, potential/NN
 , for/IN, future/JJ, development/NN, ./.]
 
+<code>
 keywords: 2 level
 keywords: 4 bedroom home
 keywords: prime of marlborough heights
@@ -31,6 +32,7 @@ keywords: much potential
 keywords: future development
 keywords: upper lonsdale home
 keywords: centrally located close to three schools
+</code>
 
 It would help to train it on relevant text first, tweak the tags and then run it again, but for an initial run this is not bad.
 
