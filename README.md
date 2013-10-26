@@ -1,7 +1,7 @@
 KeywordParser
 =============
 
-NLP keyword parser
+NLP keyword parser using Stanford CoreNLP postagger in C#
 
 Given some rest api that produces xml listings, i capture the description and parse 
 keywords out of it with a naive parser over the stanford postagger as a preprocessor.
