@@ -1,13 +1,11 @@
-KeywordParser
-=============
+<h1>NLP keyword parser</h1>
 
-NLP keyword parser using Stanford CoreNLP postagger in C#
+<p>Using Stanford CoreNLP postagger in C# and given a rest api that produces xml listings, I capture the description and parse 
+keywords out of it with a naive parser.</p>
 
-Given some rest api that produces xml listings, i capture the description and parse 
-keywords out of it with a naive parser over the stanford postagger as a preprocessor.
+<h3>Sample input and output:</h3>
 
-e.g.
-Sentence: [Set/NNP, on/IN, 8,300/CD, square/JJ, feet/NNS, of/IN, magnificently/RB, landscaped/VBN, property/NN, ;/:, this/DT, 2/CD, level/NN, ,/,, 4/CD, bedroom/NN, home/
+<b>Sentence:</b> [Set/NNP, on/IN, 8,300/CD, square/JJ, feet/NNS, of/IN, magnificently/RB, landscaped/VBN, property/NN, ;/:, this/DT, 2/CD, level/NN, ,/,, 4/CD, bedroom/NN, home/
 NN, is/VBZ, in/IN, the/DT, prime/JJ, of/IN, Marlborough/NNP, Heights/NNP, ./.]
 Sentence: [Having/VBG, numerous/JJ, updates/NNS, over/IN, the/DT, years/NNS, ;/:, you/PRP, will/MD, find/VB, refinished/JJ, floors/NNS, ,/,, upgraded/VBN, kitchen/NN, and
 /CC, baths/NNS, ,/,, and/CC, new/JJ, exterior/NN, paint/NN, ./.]
@@ -34,6 +32,6 @@ Sentence: [This/DT, Upper/NNP, Lonsdale/NNP, home/NN, is/VBZ, centrally/RB, loca
   <li>keywords: centrally located close to three schools</li>
 </ul>
 
-It would help to train it on relevant text first, tweak the tags and then run it again, but for an initial run this is not bad.
+<p>It would help to train it on relevant text first, tweak the tags and then run it again, but for an initial run this is not bad.</p>
 
 
