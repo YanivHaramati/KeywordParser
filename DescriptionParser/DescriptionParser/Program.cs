@@ -10,7 +10,7 @@ namespace DescriptionParser
     
     public class Program
     {
-        const string QueryListingDescriptions = @"some link to an xml result page;
+        const string QueryListingDescriptions = @"some link to an xml result page";
 
         // ReSharper disable once UnusedParameter.Local
         static void Main(string[] args)
