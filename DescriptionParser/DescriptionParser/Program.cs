@@ -7,9 +7,10 @@ using Newtonsoft.Json;
 
 namespace DescriptionParser
 {
+    
     public class Program
     {
-        const string QueryListingDescriptions = @"http://dvc01mad904:8080/solr/listings/select?q=*:*&rows=100";
+        const string QueryListingDescriptions = @"some link to an xml result page;
 
         // ReSharper disable once UnusedParameter.Local
         static void Main(string[] args)
@@ -19,7 +20,9 @@ namespace DescriptionParser
                 var xml = new XmlDocument();
                 xml.LoadXml(result);
                 var doc = BsonDocument.Parse(JsonConvert.SerializeXmlNode(xml));
-                doc["response"].AsBsonDocument["result"].AsBsonDocument["doc"].AsBsonArray.ToList().ForEach(d =>
+                
+                // assume what we want is in x.y.z path and we're expecting an array.
+                doc["x"].AsBsonDocument["y"].AsBsonDocument["z"].AsBsonArray.ToList().ForEach(d =>
                 {
                     Console.WriteLine("\nProcessing listing:\n");
                     ProcessListing(d.AsBsonDocument);
@@ -30,9 +33,10 @@ namespace DescriptionParser
 
         private static void ProcessListing(BsonDocument listing)
         {
-            var description = listing["str"].AsBsonArray.FirstOrDefault(d => d.AsBsonDocument["@name"].AsString == "listing__description__public");
+            // assuming what we want is in node x and then y is our listing_description node, which has a text node.
+            var description = listing["x"].AsBsonArray.FirstOrDefault(d => d.AsBsonDocument["y"].AsString == "listing_description");
             if (description == null) return;            
-            Relevance.TagText(description["#text"].AsString);
+            Relevance.TagText(description["text"].AsString);
         }
 
         private static void RequestData(string uri, Action<string> action)
